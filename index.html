@@ -397,7 +397,114 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECCION CONTACTO/SOPORTE -->
+         <section class="seccion-contacto" id="contacto">
+         <h2>CONTACTO Y SOPORTE</h2>
+         <p>¿Tienes consultas, problemas con un título o propuestas comerciales? Escríbenos.
+         </p>
+
+         <form>
+         <!-- Campo nombre -->
+         <div class="grupo-campo">
+         <label for="nombre">Nombre completo:</label>
+         <input type="text" id="nombre" name="nombre" placeholder="Ej:Agustina Vega" required>
+         </div>
+
+        <!-- Campo Correo -->
+         <div class="grupo-campo">
+         <label class="email">Correo electronico:</label>
+         <input type="email" id="email" name="email" placeholder="nombre@gmail.com" required>
+         </div>
+
+         <!-- Campo telefono -->
+         <div class="grupo-campo">
+         <label for="telefono">Telefono</label>
+         <input type="tel" id="telefono" name="telefono" placeholder="Ej:+54 3865 234567"pattern="[0-9]{7,15}" required>
+         </div>
+
+          <!-- Menu desplegable -->
+         <div class="grupo-campo">
+         <label for="motivo">Motivo de contacto:</label>
+         <select id="motivo" name="motivo" required>
+         <option value="" disabled selected>Seleccione una opcion...</option> 
+         <option value="soporte">Soporte tecnico/reporte de bugs</option>
+         <option value="compras">Consulta de compras y pedidos</option>
+         <option value="prensa">Prensa, alianzas o distribucion</option>
+         <option value="otro">Otras consultas</option>
+         </select>
+         </div>
+
+         <!--plataforma  -->
+         <fieldset class="grupo-opciones">
+         <legend>Plataforma principal de juego:</legend>
+
+         <div clas="radios-disponibles">
+         <label>
+         <input type="radio" name="plataforma" value="pc"checked>PC
+         </label> 
+
+         <label>
+         <input type="radio" name="plataforma" value="playstation">PlayStation
+         </label> 
+
+         <label>
+         <input type="radio" name="plataforma" value="xbox"checked>Xbox
+         </label> 
+
+         <label>
+         <input type="radio" name="plataforma" value="Oddysey"checked>Oddysey
+         </label> 
+         </div>
+         </fieldset>
+
+         <!-- juego seleccionado -->
+         <div class="grupo-campo">
+         <div class="cabeza-campo">
+         <span>Juego seleccionado</span>
+         </div>
+
+         <label for="juego-busqueda">Buscar juego:</label>
+         <div class="contenedor-bsucador">
+         <span>🔍︎</span>
+         <input type="search" id="juego-busqueda" name="juego" list="lista-juegos"
+         placeholder="Escribe para buscar un juego..."
+         autocomplete="off">
+         </div>
+         <!-- Catalogo actual -->
+         <datalist id="lista-juegos">
+         <option value="Hoghwarts Legacy">
+         <option value="Uncharted 4">
+         <option value="Outlast 2">
+         <option value="The Sims 4">
+         <option value="Resident Evil 6">
+         <option value="Left 4 Dead 2">
+         <option value="The Last Of Us II">
+         <option value="Sillent Hill f">
+         <!-- Proximos lanzamientos -->
+         <option value="The Damned City (Reserva)">
+         <option value="Souls (Reserva)">
+         <option value="Last Breath (Reserva)">
+         </datalist>
+         </div>
+         
+         <!-- Comentarios -->
+         <div class="grupo-campo">
+         <label for="mensaje">Mensaje o comentarios</label>
+         <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje detallado aquí..." required></textarea>
+         </div>
+
+         <!-- Controles -->
+         <div class="acciones-formularios">
+         <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+         <button type="reset" class="boton-limpiar">Limpiar Formulario</button>
+         </div>
+
+        </form>
+        </section>
     </main>
+
+
     
 </body>
 </html>
