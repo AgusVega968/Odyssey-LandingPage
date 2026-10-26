@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+/* paleta de colores */
+:root{
+  --rojo-brilloso: #b71c1c;    
+  --coral-intenso: #e53935;          
+   
+  --blanco: #ffffff;          
+  --blanco-celeste: #cbd5e1;  
+
+  --oscuro-nav: rgba(10, 10, 15, 0.75);
+  --gris-oscuro: rgba(255, 255, 255, 0.08);
+  --gris-clarito: rgba(255, 255, 255, 0.3);
+  --negro-rojizo:rgba(0, 0, 0, 0.7);
+
+  /* degagradado para el banner */
+  --opaco: rgba(10, 10, 15, 0.4);
+  --opaco2: rgba(10, 10, 15, 0.9);
+}
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Barra de navegacion (header)*/
+.navbarra {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  background: var(--oscuro-nav); 
+  backdrop-filter: blur(10px); /*efecto cristal*/
+  border-bottom: 1px solid var(--gris-oscuro);
+  z-index: 1000; /*navbarra queda adelante*/
+}
+/* logo */
+.navbarra .logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--blanco);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-shadow: 0 0 10px var(--gris-clarito);
+}
+
+/* contenedor de los enlaces */
+.navbarra nav ul.lista-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbarra nav ul.lista-nav li {
+  display: inline-flex;
+}
+/* estilo de los enlaces */
+.navbarra nav ul.lista-nav li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--blanco-celeste);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  padding: 6px 0;
+}
+.navbarra nav ul.lista-nav li a:hover {
+  color:var(--blanco);
+}
+/* linea roja*/
+.navbarra nav ul.lista-nav li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--rojo-brilloso); 
+  transition: width 0.3s ease; /* se expande la linea de izquierda a derecha */
+}
+.navbarra nav ul.lista-nav li a:hover::after {
+  width: 100%;
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/*HER0*, BANNER */
+.hero{
+  position: relative;
+  width: 100%;
+  min-height: 85vh; 
+  background: linear-gradient(to bottom,var(--opaco), var(--opaco2)), url(../assets/hero/banner.webp) center/cover no-repeat; /*primero va el degradado oscuro, debajo la imagen*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+/* caja de contenido */
+.contenedor-hero{
+  max-width: 800px;
+  z-index: 2; /* Traigo el contenido hacia el frente */
+}
+.hero h1{
+  font-size: 3.5rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  margin: 15px 0;
+  text-shadow: 0 4px 15px var(--gris-oscuro); 
+.hero span, .hero p{
+  color:var(--blanco);
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px var(--negro-rojizo);/* Sombra para poder resaltar el texto sobre la foto */
+}
+}
+/* boton (explorar catalogo) */
+.catalogo-boton{
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 38px;
+  background-color: var(--rojo-brilloso);
+  color: var(--blanco);
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px var(--rojo-sangre);
+}
+.catalogo-boton:hover{
+  background-color: var(--coral-intenso);
+  transform: translateY(-2px);  /* eleva las letras en el boton */
+  box-shadow: 0 6px 25px var(--rojo-brilloso);
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
