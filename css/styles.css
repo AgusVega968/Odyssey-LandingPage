@@ -7,12 +7,15 @@
 /* paleta de colores */
 :root{
   --rojo-brilloso: #b71c1c;    
-  --coral-intenso: #e53935;          
+  --coral-intenso: #e53935; 
+  --rojo-vino: rgba(183, 28, 28, 0.45);         
    
   --blanco: #ffffff;          
-  --blanco-celeste: #cbd5e1;  
+  --blanco-celeste: #cbd5e1; 
+  --cleste-blanco-card: #a0aec0;
 
   --oscuro-nav: rgba(10, 10, 15, 0.75);
+  --fondo: #0f1117;
   --gris-oscuro: rgba(255, 255, 255, 0.08);
   --gris-clarito: rgba(255, 255, 255, 0.3);
   --negro-rojizo:rgba(0, 0, 0, 0.7);
@@ -20,6 +23,8 @@
   /* degagradado para el banner */
   --opaco: rgba(10, 10, 15, 0.4);
   --opaco2: rgba(10, 10, 15, 0.9);
+
+  --azul-gris: #181b24;
 }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* Barra de navegacion (header)*/
@@ -142,3 +147,113 @@
   box-shadow: 0 6px 25px var(--rojo-brilloso);
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* CARDS-LANZAMIENTOS */
+/* Contenedor general */
+.seccion-cards{
+  padding: 80px 5px;
+  background-color: var(--fondo);
+  color: var(--blanco);
+  text-align: center;
+}
+/*Titulo*/
+.seccion-cards h2{
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative; /* Referente para posicionar el subrayado rojo */
+  
+}
+
+.seccion-cards h2::after{
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%); /* Centrado horizontal exacto respecto al título */
+  width: 60px;
+  height: 3px;
+  background-color: var(--rojo-brilloso);
+}
+/* pone las tarjetas una al lado de la otra */
+.contenedor-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Asegura que todas las tarjetas tengan la misma altura */
+  gap: 35px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+/* tarjeta individual */
+.card {
+  background-color: var(--azul-gris);
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 8px;
+  overflow: hidden; /* Recorta las esquinas de la imagen según el border-radius */
+  width: 320px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);  /*  salto hacia arriba */
+  box-shadow: 0 12px 30px var(--negro-rojizo);
+  border-color: var(--rojo-vino);
+}
+/* Marco contenedor de la portada */
+.image-card{
+  width: 100%;
+  height: 200px;
+}
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+/* Cuerpo de texto y acción */
+.contenido-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa el espacio restante */
+  text-align: left;
+}
+/* titulo de la carta */
+.contenido-card h3{
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color:var(--blanco);
+  margin-bottom: 12px;
+}
+.contenido-card p{
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color:var(--cleste-blanco-card);
+  margin-bottom: 24px;
+  flex-grow: 1; /* Empuja el botón siempre al fondo de la tarjeta */
+}
+/*boton de accion*/
+.card-boton{
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--blanco);
+  border: 1px solid var(--rojo-brilloso);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+/* Rellena e ilumina al pasar el mouse */
+.card-boton:hover{
+  background-color: var(--rojo-brilloso);
+  box-shadow: 0 0 15px var(--rojo-vino);
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
