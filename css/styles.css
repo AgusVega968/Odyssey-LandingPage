@@ -1093,3 +1093,124 @@
     overflow-x: hidden;
   }
 }
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* PAGINAS LEGALES */
+
+
+.cabecera-legal {
+    background-color: var(--fondo);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--gris-oscuro);
+}
+
+.logo-legal {
+    color: var(--blanco);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.nav-legal a {
+    color: var(--blanco-celeste);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-legal a:hover {
+    color: var(--rojo-brilloso);
+}
+
+/* Contenido de la pagina */
+
+.pagina-legal {
+    min-height: 70vh;
+    padding: 60px 20px;
+    background-color: var(--rojo-brilloso);
+    color: var(--blanco-celeste);
+    box-sizing: border-box;
+}
+
+.contenido-legal {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: var(--azul-gris);
+    border: 1px solid var(--gris-oscuro);
+    border-radius: 10px;
+    box-sizing: border-box;
+    line-height: 1.7;
+}
+
+.contenido-legal h1 {
+    color: var(--blanco);
+    font-size: 2.3rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.contenido-legal h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color:var(--rojo-brilloso);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.contenido-legal h2 {
+    color: var(--blanco);
+    font-size: 1.35rem;
+    margin-top: 30px;
+    margin-bottom: 8px;
+}
+
+.contenido-legal p {
+    font-size: 1rem;
+    color:var(--gris-celeste);
+}
+
+.contenido-legal .introduccion-legal {
+    font-size: 1.1rem;
+    color: var(--blanco-celeste);
+}
+
+.contenido-legal .fecha-legal {
+    color: var(--gris-azulado);
+    font-size: 0.9rem;
+    margin-top: 35px;
+}
+.pie-pagina.pie-legal {
+    padding: 25px 5%;
+}
+
+/* Adaptacion*/
+
+@media (max-width: 800px) {
+.cabecera-legal {
+  flex-direction: column;
+  padding: 20px;
+}
+.pagina-legal {
+  padding: 35px 15px;
+}
+.contenido-legal {
+  padding: 22px;
+}
+.contenido-legal h1 {
+  font-size: 1.8rem;
+}
+.contenido-legal h2 {
+  font-size: 1.2rem;
+}
+.pie-pagina.pie-legal .contenedor-inferior {
+  flex-direction: column;
+  align-items: flex-start;
+}
+}
